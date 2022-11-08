@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+import pizza
 
 urlpatterns = [
-    path('pizza/', include('pizza.urls')),
+    path('', include('pizza.urls')),
     path('admin/', admin.site.urls),
 ]
