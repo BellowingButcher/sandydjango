@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-7+a8mp5gosij7f-eizzd+jpg0bo0jvmo5j)s!%l-l94_k!dc3p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io'] 
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pizza',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +79,11 @@ WSGI_APPLICATION = 'pizzaplanet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'postgres',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
